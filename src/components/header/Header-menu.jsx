@@ -1,7 +1,7 @@
 const menuList = [
   { text: "Home", link: "/" },
   { text: "Blog", link: "/viewallblogpost" },
-  { text: "Contact", link: "#Contact" },
+  { text: "Contact", link: "/contact" },
 ];
 const MenuHeader = () => {
   return (

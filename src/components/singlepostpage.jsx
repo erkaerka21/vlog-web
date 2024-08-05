@@ -14,15 +14,15 @@ const SinglepostPage = ({
   paragraph6,
 }) => {
   return (
-    <div>
+    <div className="flex flex-col gap-y-7">
       <h1 className="font-extrabold text-4xl">{title}</h1>
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center gap-x-4">
         <img src={artistImg} className="w-8 h-8" />
         <p className="text-base font-semibold text-gray-600">{artistName}</p>
         <p className="text-gray-600 text-base">{date}</p>
       </div>
       <img src={img} />
-      <div>
+      <div className="flex flex-col gap-y-5 text-justify">
         <p>{paragraph1}</p>
         <p>{paragraph2}</p>
         <h1 className="text-xl font-bold">{title1}</h1>

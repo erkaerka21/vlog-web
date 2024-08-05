@@ -6,7 +6,7 @@ import { FaLinkedin } from "react-icons/fa";
 const menuListFooter = [
   { text: "Home", link: "/" },
   { text: "Blog", link: "#Blog" },
-  { text: "Contact", link: "#Contact" },
+  { text: "Contact", link: "/contact" },
 ];
 const listFooter = [
   { text: "Term of Use", link: "/#Term of Use" },

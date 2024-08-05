@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="px-40 py-8">
       <div className="flex justify-between items-center">
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center gap-x-1">
           <img src="/Union.png" alt="zuraglogo1" className="h-7 w-7" />
           Meta<strong>Blog</strong>
         </div>
