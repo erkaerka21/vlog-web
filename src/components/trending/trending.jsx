@@ -4,7 +4,7 @@ const { default: TrendingCart } = require("./trendingCart");
 
 const Trending = () => {
   return (
-    <div className="px-40 py-20">
+    <div className="px-10 py-4 md:px-40 md:py-20">
       <div>
         <h1 className="font-extrabold text-2xl mb-8">Trending</h1>
       </div>

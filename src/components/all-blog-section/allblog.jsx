@@ -1,5 +1,6 @@
 import BlogCart from "./blogCart";
 import allBlogData from "./all-blog-data";
+import { useEffect, useState } from "react";
 const allBlogMenuList = [
   { text: "All", link: "/" },
   { text: "Design", link: "/#Desgin" },
@@ -10,6 +11,16 @@ const allBlogMenuList = [
 ];
 import Link from "next/link";
 const Allblog = () => {
+  const [articles, setArticles] = useState([]);
+  const articleData = async () => {
+    const res = await fetch("https://dev.to/api/articles?page=1&per_page=9");
+    const data = await res.json();
+    setArticles(data);
+  };
+  useEffect(() => {
+    articleData();
+  }, []);
+  console.log("датанууд", articles);
   return (
     <div className="px-40 py-20 flex flex-col gap-y-5 mb-10">
       <h1 className="text-black text-2xl font-extrabold">All Blog Post</h1>
@@ -24,8 +35,13 @@ const Allblog = () => {
         <a className="font-semibold">View All</a>
       </div>
       <div className="grid grid-cols-3 gap-x-8 gap-y-6">
-        {allBlogData.map(({ img, category, title, date }) => (
-          <BlogCart img={img} category={category} title={title} date={date} />
+        {articles.map((article) => (
+          <BlogCart
+            img={article.social_image}
+            category={article.user.name}
+            title={article.title}
+            date={article.published_at}
+          />
         ))}
       </div>
       <div className="flex justify-center">

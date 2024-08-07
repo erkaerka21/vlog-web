@@ -3,7 +3,7 @@ import { GrPrevious } from "react-icons/gr";
 
 const Hero = ({ category, title, date, bgImg }) => {
   return (
-    <div className="px-40 py-24">
+    <div className="hidden md:flex flex-col px-40 py-24">
       <div className="relative">
         <div className="absolute bg-white rounded-xl bottom-2 left-2 z-10 p-10 flex flex-col items-start gap-y-4">
           <div className="text-white bg-indigo-500 px-2 py-1 text-center rounded-xl">

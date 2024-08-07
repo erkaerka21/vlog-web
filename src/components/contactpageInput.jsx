@@ -17,10 +17,10 @@ export default function ContactPageInput() {
           placeholder="Subject"
           className="w-full rounded-md px-3 py-1 border-solid border-2 border-gray-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 hover:border-sky-500"
         ></input>
-        <input
+        <textarea
           placeholder="Write a message"
           className="w-full rounded-md px-3 py-1 min-h-32 border-solid border-2 border-gray-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 hover:border-sky-500"
-        ></input>
+        ></textarea>
       </div>
       <div className="flex items-start">
         <button className="py-2 px-4 bg-violet-500 text-white font-semibold text-sm rounded-xl">

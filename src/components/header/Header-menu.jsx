@@ -5,7 +5,7 @@ const menuList = [
 ];
 const MenuHeader = () => {
   return (
-    <div>
+    <div className="hidden md:flex">
       <ul className="flex flex-row text-base text-gray-600 gap-x-6">
         {menuList.map((menu) => (
           <li>
