@@ -1,8 +1,15 @@
 import MenuHeader from "./Header-menu";
 import { IoSearch } from "react-icons/io5";
 import MobileMenuButton from "./mobileMenu";
+import { useContext } from "react";
+import { SearchContext } from "../providers/provider-search";
 
 const Header = () => {
+  const { setSearchText } = useContext(SearchContext);
+  const changedValue = (e) => {
+    setSearchText(e.target.value);
+  };
+
   return (
     <div className="px-10 py-4 md:px-40 md:py-8">
       <div className="flex flex-row justify-between items-center">
@@ -18,6 +25,7 @@ const Header = () => {
             placeholder="Search"
             type="text"
             name="search"
+            onChange={changedValue}
           />
 
           <IoSearch className="h-5 w-5 absolute right-2 bottom-2 text-gray-400"></IoSearch>
