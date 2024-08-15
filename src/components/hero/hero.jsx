@@ -1,26 +1,53 @@
+import { useEffect, useState } from "react";
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
+import HeroCartCarousel from "./hero-cart-carousel";
 
-const Hero = ({ category, title, date, bgImg }) => {
+const Hero = () => {
+  const [heroArticles, setHeroArticles] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState([]);
+  const GetHeroData = async () => {
+    const response = await fetch(
+      `https://dev.to/api/articles?top=5&per_page=4`
+    );
+    const data = await response.json();
+    setHeroArticles(data);
+  };
+  useEffect(() => {
+    GetHeroData();
+  }, []);
   return (
     <div className="hidden md:flex flex-col px-40 py-24">
-      <div className="relative">
-        <div className="absolute bg-white rounded-xl bottom-2 left-2 z-10 p-10 flex flex-col items-start gap-y-4">
-          <div className="text-white bg-indigo-500 px-2 py-1 text-center rounded-xl">
-            {category}
-          </div>
-          <h1 className="text-2xl font-bold w-9/12">{title}</h1>
-          <p className="text-gray-400">{date}</p>
-        </div>
-        <img src={bgImg} className="rounded-xl" />
+      <div
+        className="flex w-full overflow-x-hidden transition-all duration-150"
+        style={{ transform: "translateX(-${currentIndex * 100}}%)" }}
+      >
+        {heroArticles.map((heroArticle, i) => (
+          <HeroCartCarousel
+            tags={heroArticle.tag_list}
+            title={heroArticle.title}
+            date={heroArticle.readable_publish_date}
+            bgImg={heroArticle.social_image}
+          />
+        ))}
       </div>
       <div className="flex text-2xl text-gray-400 mt-3 justify-end">
-        <div className="mr-2 border-solid border-2 border-gray-300 rounded-lg flex justify-center items-center">
+        <button
+          className="mr-2 border-solid border-2 border-gray-300 rounded-lg flex justify-center items-center"
+          onClick={() => {
+            setCurrentIndex(currentIndex - 1);
+          }}
+        >
           <GrPrevious className="" />
-        </div>
-        <div className="border-solid border-2 border-gray-300 rounded-lg flex justify-center items-center">
+        </button>
+        <button
+          className="border-solid border-2 border-gray-300 rounded-lg flex justify-center items-center"
+          onClick={() => {
+            setCurrentIndex(currentIndex + 1);
+          }}
+        >
           <GrNext />
-        </div>
+        </button>
       </div>
     </div>
   );
