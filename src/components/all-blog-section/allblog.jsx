@@ -69,7 +69,7 @@ const Allblog = () => {
   // );
 
   return (
-    <div className="px-40 py-20 flex flex-col gap-y-5 mb-10">
+    <div className="px-10 py-4 md:px-40 md:py-20 flex flex-col gap-y-6 mb-10">
       <h1 className="text-black text-2xl font-extrabold">All Blog Post</h1>
       <div className="flex flex-row justify-between">
         <ul className="flex font-semibold gap-x-3">
@@ -84,7 +84,7 @@ const Allblog = () => {
         <a className="font-semibold">View All</a>
       </div>
       {/* <h1>Хайлтын утга : {searchText}</h1> */}
-      <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+      <div className="grid grid-cols-3">
         {findArticle.map((article) => (
           <BlogCart key={article.id} article={article} />
         ))}

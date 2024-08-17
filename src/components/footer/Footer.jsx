@@ -17,7 +17,7 @@ const listFooter = [
 ];
 const Footer = () => {
   return (
-    <div className="bg-slate-100 px-40 py-10">
+    <div className="bg-slate-100 px-10 py-4 md:px-40 md:py-10">
       <div>
         <div className="flex flex-row justify-between">
           <div className="w-[320px]">
