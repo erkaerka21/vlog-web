@@ -84,7 +84,7 @@ const Allblog = () => {
         <a className="font-semibold">View All</a>
       </div>
       {/* <h1>Хайлтын утга : {searchText}</h1> */}
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 gap-4">
         {findArticle.map((article) => (
           <BlogCart key={article.id} article={article} />
         ))}
